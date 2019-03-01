@@ -11,7 +11,6 @@ Fortunately it was quite easy to modify the game's code to force the language in
 2) Using `Edit->Search Assemblies` search for `GetSystemLanguage` (which is a method inside the `SettingsState` class on the global namespace)
 
 ![Search Assemblies](search_assemblies.png)
-
 ![Search](search.png)
 
 4) Double-click on the search result, then right-click on the method's name and choose `Edit Method (C#)...`
