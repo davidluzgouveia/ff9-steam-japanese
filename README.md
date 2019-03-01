@@ -17,7 +17,7 @@ Fortunately it was quite easy to modify the game's code to force the language in
 
 ![Edit Method](edit_method.png)
 
-5) Replace all of the method's body with `return "Japanese";`.
+5) Replace all of the method's body with `return "Japanese";`
 
 In other words, this:
 
@@ -60,7 +60,7 @@ public string GetSystemLanguage()
 }
 ```
 
-6) Hit `Compile`, then `File->Save Module` with the default settings on top of the original file.
+6) Hit `Compile`, then `File->Save Module` with the default settings, on top of the original file.
 
 ![Compile](compile.png)
 
