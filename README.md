@@ -12,9 +12,11 @@ Fortunately it was quite easy to modify the game's code to force the language in
 
 ![Search Assemblies](search_assemblies.png)
 
+![Search](search.png)
+
 4) Double-click on the search result, then right-click on the method's name and choose `Edit Method (C#)...`
 
-![Search](search.png)
+![Edit Method](edit_method.png)
 
 5) Replace all of the method's body with `return "Japanese";`.
 
