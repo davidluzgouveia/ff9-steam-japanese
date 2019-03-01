@@ -65,4 +65,6 @@ public string GetSystemLanguage()
 
 That's it! The game should now run in Japanese (don't be fooled by the title screen).
 
+![Game](game.jpg)
+
 Note: If at any point you want to go back to the original langue, just use Steam's built-in "Verify integrity of game files..." option. Or keep a backup of the original file yourself.
