@@ -69,3 +69,13 @@ That's it! The game should now run in Japanese (don't be fooled by the title scr
 ![Game](game.jpg)
 
 Note: If at any point you want to go back to the original language, just use Steam's built-in `Verify integrity of game files...` option. Or keep a backup of the original file yourself.
+
+Also, notice that the original code contained the following:
+
+```cs
+if (systemLanguage == SystemLanguage.Japanese)
+{
+    return "English(US)";
+}```
+
+That's likely
