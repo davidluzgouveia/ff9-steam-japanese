@@ -64,8 +64,13 @@ public string GetSystemLanguage()
 
 ![Compile](compile.png)
 
-That's it! The game should now run in Japanese (don't be fooled by the title screen).
+That's it! The game should now run in Japanese. Don't be fooled by the title screen, it still shows up in english, but the bottom left corner should read JP.
 
 ![Game](game.jpg)
 
-Note: If at any point you want to go back to the original language, just use Steam's built-in `Verify integrity of game files...` option. Or keep a backup of the original file yourself.
+## Notes
+
+
+- If at any point you want to go back to the original language, just use Steam's built-in `Verify integrity of game files...` option. Or keep a backup of the original file yourself.
+
+- **Important**: If you go into the Language Selection screen inside the game, and explicitally choose a language, the game starts ignoring the mod and uses that language instead. To make it worse, this change appears to get applied to your save file, since the only way I've found to revert it is to head to `AppData\LocalLow\SquareEnix\FINAL FANTASY IX\Steam\EncryptedSavedData` and deleting the save file there. However, if you keep a copy of your Japanese save file on the cloud, downloading it also seems to revert the language back to Japanese as well. Just be careful with the language menu.
