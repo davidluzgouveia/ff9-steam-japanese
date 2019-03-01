@@ -4,21 +4,17 @@ For some reason, even after you change the language options for Final Fantasy IX
 
 Fortunately it was quite easy to modify the game's code to force the language into Japanese. There was already a patched version of the file floating around the forums, but I prefer to do it myself and know exactly what was changed, as well as knowing how to redo it in case the game gets an update in the future.
 
-IMAGE
-
-Here's how to do it.
-
 ## Instructions
 
 1) Open `Steam\steamapps\common\FINAL FANTASY IX\x64\FF9_Data\Managed\Assembly-CSharp.dll` with [dnSpy](https://github.com/0xd4d/dnSpy)
 
 2) Using `Edit->Search Assemblies` search for `GetSystemLanguage` (which is a method inside the `SettingsState` class on the global namespace)
 
-IMAGE
+![Search Assemblies](search_assemblies.png)
 
 4) Double-click on the search result, then right-click on the method's name and choose `Edit Method (C#)...`
 
-IMAGE
+![Search](search.png)
 
 5) Replace all of the method's body with `return "Japanese";`.
 
@@ -63,6 +59,10 @@ public string GetSystemLanguage()
 }
 ```
 
-6) Hit `Compile`, then `File->Save Module` with the default settings on top of the original file. That's it!
+6) Hit `Compile`, then `File->Save Module` with the default settings on top of the original file.
+
+![Compile](compile.png)
+
+That's it! The game should now run in Japanese (don't be fooled by the title screen).
 
 Note: If at any point you want to go back to the original langue, just use Steam's built-in "Verify integrity of game files..." option. Or keep a backup of the original file yourself.
