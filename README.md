@@ -6,9 +6,9 @@ Fortunately it was quite easy to modify the game's code to force the language in
 
 ## Instructions
 
-1) Open `Steam\steamapps\common\FINAL FANTASY IX\x64\FF9_Data\Managed\Assembly-CSharp.dll` with [dnSpy](https://github.com/0xd4d/dnSpy)
+1) Open `Steam\steamapps\common\FINAL FANTASY IX\x64\FF9_Data\Managed\Assembly-CSharp.dll` with [dnSpy](https://github.com/0xd4d/dnSpy).
 
-2) Using `Edit->Search Assemblies` search for `GetSystemLanguage` (which is a method inside the `SettingsState` class on the global namespace)
+2) Using `Edit->Search Assemblies` search for `GetSystemLanguage` (which is a method inside the `SettingsState` class on the global namespace).
 
 ![Search Assemblies](search_assemblies.png)
 ![Search](search.png)
@@ -73,4 +73,10 @@ That's it! The game should now run in Japanese. Don't be fooled by the title scr
 
 - If at any point you want to go back to the original language, just use Steam's built-in `Verify integrity of game files...` option. Or keep a backup of the original file yourself.
 
-- **Important**: If you go into the Language Selection screen inside the game, and explicitally choose a language, the game starts ignoring the mod and uses that language instead. To make it worse, this change appears to get applied to your save file, since the only way I've found to revert it is to head to `AppData\LocalLow\SquareEnix\FINAL FANTASY IX\Steam\EncryptedSavedData` and deleting the save file there. However, if you keep a copy of your Japanese save file on the cloud, downloading it also seems to revert the language back to Japanese as well. Just be careful with the language menu.
+- **Very Important**: If you happen to go into the Language Selection screen inside the game, and explicitly choose a language, the game will start ignoring the mod and uses that language instead. To make things worse, this change seems to be automatically saved and will persist even if you quit the game. I've found a few workarounds for this issue:
+
+    - If you have your Japanese save file uploaded to the cloud, then you can just download it to revert the language.
+    
+    - If you don't care about your save file, you can delete it from `AppData\LocalLow\SquareEnix\FINAL FANTASY IX\Steam\EncryptedSavedData`.
+    
+    - Alternatively, you can use dnSpy, search for the `Read` method inside `SharedDataBytesStorage`, and change the line that says `this.SelectedLanguage = binaryReader.ReadInt32();` into `this.SelectedLanguage = -1;` to make the game ignore the language on the saved data.
